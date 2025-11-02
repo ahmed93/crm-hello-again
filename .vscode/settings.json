@@ -1,3 +1,14 @@
 {
-	"cSpell.words": ["isready", "PGDATA", "postgres", "postgresql"]
+	"cSpell.words": [
+		"dbshell",
+		"isready",
+		"libpq",
+		"PGDATA",
+		"pipenv",
+		"postgres",
+		"postgresql",
+		"PYTHONDONTWRITEBYTECODE",
+		"PYTHONUNBUFFERED"
+	],
+	"python-envs.defaultEnvManager": "ms-python.python:pipenv"
 }
