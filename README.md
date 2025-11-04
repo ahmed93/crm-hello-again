@@ -36,7 +36,7 @@ To run the project and reproduce the benchmarks locally:
    Once the backend is running at `http://localhost:8000/`:
 
    ```bash
-   python run_viewBenchmark.py
+   python benchmark-view.py
    ```
 
 6. **View results**

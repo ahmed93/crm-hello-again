@@ -12,7 +12,7 @@ fake = Faker()
 
 
 class Command(BaseCommand):
-    help = "Efficiently seed the database with fake data."
+    help = "Seed the database with fake data"
 
     def add_arguments(self, parser):
         parser.add_argument("--target", type=int, default=100_000)
