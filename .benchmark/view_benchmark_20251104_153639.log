@@ -1,0 +1,15 @@
+Running HTTP view benchmarks (5× repeats)...
+
+All Users (paginated)              : 0.065s avg
+Filter by name                     : 0.035s avg
+Filter by city                     : 0.058s avg
+Filter by postal code              : 0.060s avg
+Filter by points                   : 0.060s avg
+Sort by name                       : 0.059s avg
+Sort by created desc               : 0.060s avg
+Search 'John'                      : 0.253s avg
+Custom pagination                  : 0.059s avg
+Recent relationships               : 0.038s avg
+Addresses by city                  : 0.030s avg
+
+Benchmark complete.

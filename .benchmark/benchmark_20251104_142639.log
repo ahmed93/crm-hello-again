@@ -1,0 +1,60 @@
+=== Django ORM Benchmark Report (20251104_142639) ===
+
+Running bench-5k
+docker exec -it crm_web python manage.py benchmark_queries --limit 5000
+
+Running ORM benchmark for 5000 users (5× repeats)...
+
+Join      : opt=0.029s (0q), plain=0.023s (1q), Δ=0.006s slower
+Filter    : opt=0.021s (1q), plain=0.022s (1q), Δ=0.002s faster
+Order     : opt=0.034s (1q), plain=0.024s (1q), Δ=0.009s slower
+Paginate  : opt=0.004s (1q), plain=0.004s (1q), Δ=0.000s slower
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-10k
+docker exec -it crm_web python manage.py benchmark_queries --limit 10000
+
+Running ORM benchmark for 10000 users (5× repeats)...
+
+Join      : opt=0.053s (0q), plain=0.044s (1q), Δ=0.009s slower
+Filter    : opt=0.051s (1q), plain=0.050s (1q), Δ=0.002s slower
+Order     : opt=0.053s (1q), plain=0.052s (1q), Δ=0.001s slower
+Paginate  : opt=0.004s (1q), plain=0.004s (1q), Δ=0.000s slower
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-50k
+docker exec -it crm_web python manage.py benchmark_queries --limit 50000
+
+Running ORM benchmark for 50000 users (5× repeats)...
+
+Join      : opt=0.300s (0q), plain=0.207s (1q), Δ=0.093s slower
+Filter    : opt=0.275s (1q), plain=0.323s (1q), Δ=0.048s faster
+Order     : opt=0.287s (1q), plain=0.271s (1q), Δ=0.017s slower
+Paginate  : opt=0.004s (1q), plain=0.004s (1q), Δ=0.000s faster
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-500k
+[ERROR] bench-500k failed:
+make: *** [bench-500k] Error 130
+
+
+================================================================================
+
+Running bench-1M
+[ERROR] bench-1M failed:
+make: *** [bench-1M] Error 130
+
+
+================================================================================

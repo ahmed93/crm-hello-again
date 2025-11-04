@@ -1,0 +1,77 @@
+=== Django ORM Benchmark Report (20251104_145137) ===
+
+Running bench-5k 
+docker exec -it crm_web python manage.py benchmark_queries --limit 5000
+
+Running ORM benchmark for 5000 users (5× repeats)...
+
+Join      : opt=0.028s (0q), plain=0.023s (1q), Δ=0.005s slower
+Filter    : opt=0.021s (1q), plain=0.021s (1q), Δ=0.000s slower
+Order     : opt=0.024s (1q), plain=0.022s (1q), Δ=0.002s slower
+Paginate  : opt=0.004s (1q), plain=0.004s (1q), Δ=0.000s faster
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-10k 
+docker exec -it crm_web python manage.py benchmark_queries --limit 10000
+
+Running ORM benchmark for 10000 users (5× repeats)...
+
+Join      : opt=0.052s (0q), plain=0.043s (1q), Δ=0.009s slower
+Filter    : opt=0.049s (1q), plain=0.048s (1q), Δ=0.001s slower
+Order     : opt=0.045s (1q), plain=0.051s (1q), Δ=0.006s faster
+Paginate  : opt=0.004s (1q), plain=0.003s (1q), Δ=0.000s slower
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-50k 
+docker exec -it crm_web python manage.py benchmark_queries --limit 50000
+
+Running ORM benchmark for 50000 users (5× repeats)...
+
+Join      : opt=0.271s (0q), plain=0.202s (1q), Δ=0.069s slower
+Filter    : opt=0.252s (1q), plain=0.299s (1q), Δ=0.047s faster
+Order     : opt=0.311s (1q), plain=0.307s (1q), Δ=0.004s slower
+Paginate  : opt=0.003s (1q), plain=0.003s (1q), Δ=0.000s slower
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-500k 
+docker exec -it crm_web python manage.py benchmark_queries --limit 500000
+
+Running ORM benchmark for 500000 users (5× repeats)...
+
+Join      : opt=2.883s (0q), plain=2.233s (1q), Δ=0.650s slower
+Filter    : opt=2.576s (1q), plain=2.594s (1q), Δ=0.018s faster
+Order     : opt=3.548s (1q), plain=3.120s (1q), Δ=0.428s slower
+Paginate  : opt=0.004s (1q), plain=0.004s (1q), Δ=0.000s faster
+
+Benchmark completed.
+
+
+================================================================================
+
+Running bench-1M 
+docker exec -it crm_web python manage.py benchmark_queries --limit 1000000
+
+Running ORM benchmark for 1000000 users (5× repeats)...
+
+Join      : opt=6.156s (0q), plain=6.324s (1q), Δ=0.168s faster
+Filter    : opt=7.021s (1q), plain=7.342s (1q), Δ=0.321s faster
+Order     : opt=10.734s (1q), plain=8.771s (1q), Δ=1.963s slower
+Paginate  : opt=0.004s (1q), plain=0.004s (1q), Δ=0.000s slower
+
+Benchmark completed.
+
+
+================================================================================
+
