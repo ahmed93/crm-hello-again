@@ -48,18 +48,6 @@ To run the project and reproduce the benchmarks locally:
 
 ---
 
-## ⚙️ Routes
-
-Your available endpoints:
-
-| Endpoint | Description |
-|-----------|-------------|
-| [`/users/`](http://localhost:8000/api/users/) | List, filter, order, and search users |
-| [`/addresses/`](http://localhost:8000/api/addresses/) | List or filter addresses |
-| [`/relationships/`](http://localhost:8000/api/relationships/) | Customer relationships |
-
----
-
 ## 📈 Benchmark Results
 
 ### With Redis Caching
