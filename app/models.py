@@ -8,8 +8,10 @@ class Address(models.Model):
     city = models.CharField(max_length=100, db_index=True)
     country = models.CharField(max_length=100, default="AT")
 
-    def __str__(self):
-        return f"{self.street} {self.street_number}, {self.city}"
+    class Meta:
+        indexes = [
+            models.Index(fields=["city_code", "city"]),
+        ]
 
 
 class AppUser(models.Model):
@@ -27,8 +29,12 @@ class AppUser(models.Model):
     birthday = models.DateField(blank=True, null=True)
     last_updated = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+    class Meta:
+        indexes = [
+            models.Index(fields=["first_name", "last_name"]),
+            models.Index(fields=["customer_id"]),
+            models.Index(fields=["created"]),
+        ]
 
 
 class CustomerRelationship(models.Model):
@@ -39,5 +45,8 @@ class CustomerRelationship(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_activity = models.DateTimeField(blank=True, null=True)
 
-    def __str__(self):
-        return f"CR {self.appuser_id} pts={self.points}"
+    class Meta:
+        indexes = [
+            models.Index(fields=["points"]),
+            models.Index(fields=["last_activity"]),
+        ]

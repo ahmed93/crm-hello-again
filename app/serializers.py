@@ -1,24 +1,36 @@
 from rest_framework import serializers
+
 from .models import Address, AppUser, CustomerRelationship
 
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = "__all__"
+        fields = ["street", "street_number", "city_code", "city", "country"]
+
+
+class CustomerRelationshipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomerRelationship
+        fields = ["points", "created", "last_activity"]
 
 
 class AppUserSerializer(serializers.ModelSerializer):
     address = AddressSerializer(read_only=True)
+    relationship = CustomerRelationshipSerializer(many=True, read_only=True)
 
     class Meta:
         model = AppUser
-        fields = "__all__"
-
-
-class CustomerRelationshipSerializer(serializers.ModelSerializer):
-    appuser = AppUserSerializer(read_only=True)
-
-    class Meta:
-        model = CustomerRelationship
-        fields = "__all__"
+        fields = [
+            "id",
+            "first_name",
+            "last_name",
+            "gender",
+            "customer_id",
+            "phone_number",
+            "created",
+            "birthday",
+            "last_updated",
+            "address",
+            "relationship",
+        ]

@@ -1,15 +1,24 @@
 {
 	"cSpell.words": [
 		"asgi",
+		"cpus",
 		"dbshell",
+		"gunicorn",
 		"isready",
 		"libpq",
 		"PGDATA",
 		"pipenv",
 		"postgres",
 		"postgresql",
+		"psycopg",
 		"PYTHONDONTWRITEBYTECODE",
-		"PYTHONUNBUFFERED"
+		"PYTHONUNBUFFERED",
+		"redis",
+		"wsgi"
 	],
-	"python-envs.defaultEnvManager": "ms-python.python:pipenv"
+	"python-envs.defaultEnvManager": "ms-python.python:pipenv",
+	"editor.formatOnSave": true,
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	}
 }
