@@ -10,6 +10,7 @@ faker = "*"
 djangorestframework = "*"
 django-filter = "*"
 django-redis = "*"
+requests = "*"
 
 [dev-packages]
 
