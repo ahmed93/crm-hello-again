@@ -41,12 +41,7 @@ class Command(BaseCommand):
 
             with transaction.atomic():
                 Address.objects.bulk_create(addresses, batch_size=1000)
-                address_ids = list(
-                    Address.objects.values_list("id", flat=True).order_by("-id")[
-                        :this_batch
-                    ]
-                )
-                address_ids.reverse()
+                address_ids = [a.id for a in addresses]
                 users = [
                     AppUser(
                         first_name=fake.first_name(),
@@ -60,12 +55,7 @@ class Command(BaseCommand):
                     for addr_id in address_ids
                 ]
                 AppUser.objects.bulk_create(users, batch_size=1000)
-                user_ids = list(
-                    AppUser.objects.values_list("id", flat=True).order_by("-id")[
-                        :this_batch
-                    ]
-                )
-                user_ids.reverse()
+                user_ids = [u.id for u in users]
                 relationships = [
                     CustomerRelationship(
                         appuser_id=u_id,
