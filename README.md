@@ -92,14 +92,11 @@ To run the project and reproduce the benchmarks locally:
 
 | Description | Example URL |
 |--------------|-------------|
-| All users (paginated) | [http://localhost:8000/api/users/?page=1&page_size=50](http://localhost:8000/api/users/?page=1&page_size=50) |
-| Filter by name | [http://localhost:8000/api/users/?first_name=John](http://localhost:8000/api/users/?first_name=John) |
-| Filter by city | [http://localhost:8000/api/addresses/?city=Vienna](http://localhost:8000/api/addresses/?city=Vienna) |
-| Filter by postal code | [http://localhost:8000/api/addresses/?city_code=1010](http://localhost:8000/api/addresses/?city_code=1010) |
-| Filter by points | [http://localhost:8000/api/relationships/?ordering=points](http://localhost:8000/api/relationships/?ordering=points) |
-| Sort by name | [http://localhost:8000/api/users/?ordering=last_name](http://localhost:8000/api/users/?ordering=last_name) |
-| Sort by created desc | [http://localhost:8000/api/users/?ordering=-created](http://localhost:8000/api/users/?ordering=-created) |
-| Search “John” | [http://localhost:8000/api/users/?search=John](http://localhost:8000/api/users/?search=John) |
-| Custom pagination | [http://localhost:8000/api/users/?page=10&page_size=50](http://localhost:8000/api/users/?page=10&page_size=50) |
-| Recent relationships | [http://localhost:8000/api/relationships/?ordering=-last_activity](http://localhost:8000/api/relationships/?ordering=-last_activity) |
-| Addresses by city | [http://localhost:8000/api/addresses/?city=Vienna](http://localhost:8000/api/addresses/?city=Vienna) |
+| **Filter by City (Alias)** | [http://localhost:8000/api/users/?city=Kylemouth](http://localhost:8000/api/users/?city=Kylemouth) |
+| **Filter by Country** | [http://localhost:8000/api/users/?address__country=AT](http://localhost:8000/api/users/?address__country=AT) |
+| **Filter by Points (>100)** | [http://localhost:8000/api/users/?relationship__points__gte=100](http://localhost:8000/api/users/?relationship__points__gte=100) |
+| **Filter by Birthday (>= 1990)** | [http://localhost:8000/api/users/?birthday__gte=1990-01-01](http://localhost:8000/api/users/?birthday__gte=1990-01-01) |
+| **Sort by Birthday** | [http://localhost:8000/api/users/?ordering=birthday](http://localhost:8000/api/users/?ordering=birthday) |
+| **Sort by Last Activity** | [http://localhost:8000/api/users/?ordering=-relationship__last_activity](http://localhost:8000/api/users/?ordering=-relationship__last_activity) |
+| **Search (Name/Phone)** | [http://localhost:8000/api/users/?search=John](http://localhost:8000/api/users/?search=John) |
+| **Advanced: City + Points** | [http://localhost:8000/api/users/?city=Kylemouth&relationship__points__gte=500](http://localhost:8000/api/users/?city=Kylemouth&relationship__points__gte=500) |
